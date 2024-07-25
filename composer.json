@@ -1,0 +1,13 @@
+{
+  "name": "nhnquang11/base-account",
+  "authors": [
+    {
+      "name": "Nguyen Hoang Nhat Quang",
+      "email": "nhnquang11@gmail.com"
+    }
+  ],
+  "require": {
+    "gregwar/captcha": "1.*",
+    "phpmailer/phpmailer": "^6.9"
+  }
+}
