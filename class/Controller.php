@@ -228,6 +228,10 @@ class Controller
     $phone = $_POST['phone'];
     $address = $_POST['address'];
 
+    if ($_POST['date'] && $_POST['month'] && $_POST['year']) {
+      $dob = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['date'];
+    }
+
     $profile_image = Session::getUser()['profile_image'];
     $image = $_FILES["profile_image"];
     if ($image["tmp_name"]) {
@@ -236,7 +240,7 @@ class Controller
     }
 
     $email = Session::getUser()['email'];
-    $updatedUser = User::update($email, $firstname, $lastname, $job_title, $profile_image, $phone, $address);
+    $updatedUser = User::update($email, $firstname, $lastname, $job_title, $profile_image, $phone, $address, $dob);
     Session::flashNoti("Your information has been updated!", "info");
     Session::set('user', $updatedUser);
     header("Location: /");

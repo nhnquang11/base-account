@@ -402,7 +402,45 @@
           <div class="input-field">
             <input type="file" id="profile_image" name="profile_image" accept="image/*" >
           </div>
+          <div class="label-field">
+            <label for="profile_image">Your phone number</label>
+            <p class="description">Your phone number</p>
+          </div>
+          <div class="input-field">
+            <div style=" display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; width: 100%;">
+              <select id="date" name="date" >
+                  <option value="" disabled selected><?= $_SESSION['user']['dob'] ? ((int) explode("-", $_SESSION['user']['dob'])[2]) : "Date" ?></option>
+                  <script>
+                      for (let i = 1; i <= 31; i++) {
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                      }
+                  </script>
+              </select>
 
+              <select id="month" name="month" >
+                  <option value="" disabled selected><?= $_SESSION['user']['dob'] ? indexToMonth(((int) explode("-", $_SESSION['user']['dob'])[1]) - 1) : "Month" ?></option>
+                  <script>
+                      const months = [
+                          'January', 'February', 'March', 'April', 'May', 'June', 
+                          'July', 'August', 'September', 'October', 'November', 'December'
+                      ];
+                      months.forEach((month, index) => {
+                          document.write('<option value="' + (index + 1) + '">' + month + '</option>');
+                      });
+                  </script>
+              </select>
+
+              <select id="year" name="year" >
+                  <option value="" disabled selected><?= $_SESSION['user']['dob'] ? ((int) explode("-", $_SESSION['user']['dob'])[0]) : "Year" ?></option>
+                  <script>
+                      const currentYear = new Date().getFullYear();
+                      for (let i = currentYear; i >= 1900; i--) {
+                          document.write('<option value="' + i + '">' + i + '</option>');
+                      }
+                  </script>
+              </select>
+            </div>
+          </div>
 
           <div class="label-field">
             <label for="profile_image">Your phone number</label>

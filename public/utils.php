@@ -57,3 +57,11 @@ function generateRandomPassword($length = 12) {
 
   return $password;
 }
+
+function indexToMonth($index) {
+  $months = [
+    'January', 'February', 'March', 'April', 'May', 'June', 
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  return $months[$index];
+}

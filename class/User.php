@@ -64,8 +64,13 @@ class User
     return $newPassword;
   }
 
-  public static function update($email, $firstname, $lastname, $job_title, $profile_image, $phone, $address) {
-    $statement = User::$pdo->prepare('update users set firstname = :firstname, lastname = :lastname, job_title = :job_title, profile_image = :profile_image, phone = :phone, address = :address where email = :email');
+  public static function update($email, $firstname, $lastname, $job_title, $profile_image, $phone, $address, $dob=null) {
+    if ($dob) {
+      $query = 'update users set dob = :dob, firstname = :firstname, lastname = :lastname, job_title = :job_title, profile_image = :profile_image, phone = :phone, address = :address where email = :email';
+    } else {
+      $query = 'update users set firstname = :firstname, lastname = :lastname, job_title = :job_title, profile_image = :profile_image, phone = :phone, address = :address where email = :email';
+    }
+    $statement = User::$pdo->prepare($query);
     $statement->bindParam(':firstname', $firstname);
     $statement->bindParam(':lastname', $lastname);
     $statement->bindParam(':job_title', $job_title);
@@ -73,6 +78,9 @@ class User
     $statement->bindParam(':phone', $phone);
     $statement->bindParam(':address', $address);
     $statement->bindParam(':email', $email);
+    if ($dob) {
+      $statement->bindParam(':dob', $dob);
+    }
     $statement->execute();
     return User::findByEmail($email);
   }
