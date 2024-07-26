@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/auth.css">
   <link rel="stylesheet" href="css/noti.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <title>Login</title>
+  <title>Log in</title>
 </head>
 
 <body>
@@ -17,8 +17,8 @@
   <div class="auth-container">
     <div class="auth-intro-container">
       <img src="images/logo.png" alt="Base logo">
-      <h1>Login</h1>
-      <p>Welcome back. Login to start working.</p>
+      <h1>Log in</h1>
+      <p>Welcome back. Log in to start working.</p>
     </div>
     <hr>
     <form class="auth-form" action="" method="post">
@@ -37,7 +37,7 @@
         <input type="checkbox" id="keep-logged-in" name="keep-logged-in" value="1">
         <label for="keep-logged-in">Keep me logged in</label>
       </div>
-      <button class="submit-button" type="submit">Login to start working</button>
+      <button class="submit-button" type="submit">Log in to start working</button>
     </form>
     <div class="further-info-section">
       <p>New user? <a href="/signup" class="text-blue">Create account</a></p>
