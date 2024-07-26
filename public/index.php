@@ -51,7 +51,4 @@ $router->post("/recover", [Controller::class, 'postRecover']);
 $router->post('/edit', [Controller::class,'postEdit']);
 $router->post('/logout', [Controller::class,'logout']);
 
-$router->get('/image', [Controller::class,'image']);
-$router->post('/image', [Controller::class,'postImage']);
-
 $router->resolve();
