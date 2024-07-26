@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 const MAILER = 'nhnquang11@gmail.com';
-const PASSWORD = 'haowqxatrwonpjuh';
+const PASSWORD = 'xxxxxxxxxxxxxx';
 
 class EmailSender
 {
