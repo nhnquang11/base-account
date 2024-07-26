@@ -1,18 +1,27 @@
-# base-account
+# Base Account
 
-1. Main features
+## Main Features
 
-- Sign up
-- Log in
-- Edit
-- Log out
-- Password Recovery (Captcha + Email Sender)
-- Save login (remember me for the next 07 days)
+- **Sign Up**
+- **Log In**
+- **Edit**
+- **Log Out**
+- **Password Recovery**
+  - Captcha
+  - Email Sender
+- **Save Login**
+  - Remember me for the next 7 days
 
-2. Security vunerabilities handling: parameterized queries (SQL Injection), escape output & sanitize input (XSS), CSRF tokens (CSRF)
+## Security Vulnerabilities Handling
 
-3. As the project hasn't been nicely refactored yet, here are some things to note:
+- **Parameterized Queries** (SQL Injection)
+- **Escape Output & Sanitize Input** (XSS)
+- **CSRF Tokens** (CSRF)
 
-- Set up a MySQL database following the file databases.db.
-- Database configuration at $config variable in public/index.php.
-- EmailSender needs setting up app password.
+## Notes
+
+As the project hasn't been nicely refactored yet, here are some things to note:
+
+- Set up a MySQL database following the file `databases.db`.
+- Database configuration is set at the `$config` variable in `public/index.php`.
+- EmailSender requires setting up an app password.
