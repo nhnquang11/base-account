@@ -5,10 +5,6 @@ require_once "utils.php";
 
 session_start();
 
-if (isset($_COOKIE['user']) && !isset($_SESSION['user'])) {
-  $_SESSION['user'] = $_COOKIE['user'];
-}
-
 // prevent cross-site requests
 setcookie('session', session_id(), [
   'samesite' => 'Strict',
